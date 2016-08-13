@@ -10,6 +10,7 @@
     function MainController($scope, $rootScope)
     {
         // Data
+        //due
         //////////
 
         // Remove the splash screen
@@ -18,7 +19,7 @@
             if ( event.targetScope.$id === $scope.$id )
             {
                 $rootScope.$broadcast('msSplashScreen::remove');
-            }
+            }git 
         });
     }
 })();
