@@ -10,7 +10,7 @@
     function MainController($scope, $rootScope)
     {
         // Data
-        //sistemo tutto io!!!!
+        //sistemo tutto io!!    !!
         //////////
 
         // Remove the splash screen
