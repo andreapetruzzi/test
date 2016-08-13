@@ -11,8 +11,6 @@
     {
         // Data
 
-
-
         //////////
 
         // Remove the splash screen
