@@ -15,6 +15,7 @@
         //ci metto altra riga
         //e ne metto anche una terza
         //e altra ancora
+        //ultima riga inserita
         //////////
 
         // Remove the splash screen
