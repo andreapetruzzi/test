@@ -10,12 +10,6 @@
     function MainController($scope, $rootScope)
     {
         // Data
-        //sistemo tutto io!!   qui  !!
-        //ci metto una seconda riga
-        //ci metto altra riga
-        //e ne metto anche una terza
-        //e altra ancora
-        //ultima riga inserita
         //////////
 
         // Remove the splash screen
