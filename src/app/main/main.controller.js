@@ -10,7 +10,7 @@
     function MainController($scope, $rootScope)
     {
         // Data
-        //quattro
+        //zzzzz222
 
         // Remove the splash screen
         $scope.$on('$viewContentAnimationEnded', function (event)
