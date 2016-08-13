@@ -10,7 +10,7 @@
     function MainController($scope, $rootScope)
     {
         // Data
-
+        //qui genero un conflitto
         //////////
 
         // Remove the splash screen
