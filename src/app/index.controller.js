@@ -15,5 +15,7 @@
         vm.themes = fuseTheming.themes;
 
         //////////
+
     }
+
 })();

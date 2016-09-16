@@ -7,7 +7,7 @@
         .controller('NotesController', NotesController);
 
     /** @ngInject */
-    function NotesController(NotesCopy, Notes, Labels, $document, $timeout, $scope, $mdSidenav, NotesService, LabelsService, $mdDialog)
+    function NotesController(IcbCityService, CitiesData, $q, DrtContactService, msNavigationService, CountryData, NotesCopy, Notes, Labels, $document, $timeout, $scope, $mdSidenav, NotesService, LabelsService, $mdDialog)
     {
         var vm = this;
 
@@ -16,6 +16,115 @@
         vm.labels = LabelsService.data;
         //vm.notes = Notes.data; //funziona anche questo
         //vm.notes = NotesCopy.notes; //funziona anche questo
+
+        /*
+         angular.forEach(CitiesData, function(row){
+            console.log(row.cityDesc);
+        });
+
+        console.log("------------------------------------");
+
+        angular.forEach(IcbCityService.cities, function(row2){
+            console.log(row2.cityDesc);
+        });
+        */
+        
+
+        //XXX AP: per vedere che funziona li metto in console ciclando array;
+        /*
+        angular.forEach(CountryData, function(row){
+            console.log(row.countryId + ' - ' + row.countryDesc);
+        });
+
+        //esempio di come vengono settati gli oggetti nel msi-api.provider
+        var res = ['aaa',['uno','due'],['tre','quattro'],{'campo1':'valore campo1', 'campo2':'valore campo2'}];
+        var xxx = {
+                url          : res[0] || '',
+                paramDefaults: res[1] || [],
+                actions      : res[2] || [],
+                options      : res[3] || {}
+            };
+
+        //compongo oggetto che poi passo al metodo java
+        vm.contact = {
+            	contactID : '12x595313',
+	            firstName : 'Andrea',
+	            lastName  : 'Petruzzi'
+        };
+        */
+
+        //TEST0
+        //DrtContactService.addContact(vm.contact);  
+
+        //TEST1
+        /*
+        DrtContactService.getCities()
+            .then(function (data) {
+
+                vm.cities = data;
+
+                angular.forEach(vm.cities, function(row){
+                    console.log(row.cityId + ' - ' + row.cityDesc);
+                });
+
+            })
+            .catch(function (error) {
+                //console.log("ERRORE nel recupero cities " + e.data.errorCode);
+
+                var newMessage = 'XHR Failed for getCustomer'
+                if (error.data && error.data.errorMessage) {
+                    newMessage = newMessage + '\n' + error.data.errorMessage;
+                    error.data.errorMessage = newMessage;
+                }
+                
+                console.log(newMessage);
+                return $q.reject(e);
+            });
+        */
+
+        //TEST2
+        /*
+        DrtContactService.getCityById('700')
+            .then(function (data) {
+
+                vm.city = data;
+                console.log(vm.city.cityId + ' - ' + vm.city.cityDesc);
+
+            })
+            .catch(function (error) {
+                //console.log("ERRORE nel recupero cities " + e.data.errorCode);
+
+                var newMessage = 'XHR Failed for getCustomer'
+                if (error.data && error.data.errorMessage) {
+                    newMessage = newMessage + '\n' + error.data.errorMessage;
+                    error.data.errorMessage = newMessage;
+                }
+                
+                console.log(newMessage);
+                return $q.reject(e);
+            });
+        */
+
+        /*
+        DrtContactService.getCities()
+            .then(function (data) {
+
+                vm.cities = data;
+
+                angular.forEach(vm.cities, function(row){
+                    console.log(row.cityId + ' - ' + row.cityDesc);
+                });
+
+            }, function (error) {
+					// Il servizio ha ritornato un errore, quindi lo notifico
+					var errors = [];
+					errors.push({severity: 'danger', code: error.data.errorCode });
+			});
+        */  
+       
+        //DrtContactService.getCityById('700');  
+        //---
+
         
         vm.search = '';
         vm.searchToolbar = false;

@@ -7,7 +7,7 @@
         .controller('QuickPanelController', QuickPanelController);
 
     /** @ngInject */
-    function QuickPanelController(msApi)
+    function QuickPanelController(msApi, $state, $translate)
     {
         var vm = this;
 
@@ -18,6 +18,17 @@
             cloud : false,
             retro : true
         };
+
+        //XXX AP: creazione di tab dinamiche
+        var today = $translate.instant('QUICKPANEL.TODAY');
+        var chat = $translate.instant('QUICKPANEL.CHAT');
+        var activity = $translate.instant('QUICKPANEL.ACTIVITY');
+
+        vm.dinamicTabs = [
+          { title: today, content: "app/quick-panel/tabs/today/today-tab.html"},
+          { title: chat, content: "app/quick-panel/tabs/chat/chat-tab.html"},
+          { title: activity, content: "app/quick-panel/tabs/activity/activity-tab.html"}
+        ];
 
         msApi.request('quickPanel.activities@get', {},
             // Success
@@ -44,8 +55,23 @@
         );
 
         // Methods
-
+        vm.eventFunction = eventFunction;
+        vm.noteFunction = noteFunction;
         //////////
+
+        function eventFunction()
+        {
+            console.log("Ho cliccato sugli eventi");
+            $state.go('app.calendar');
+        }
+
+        function noteFunction()
+        {
+            console.log("Ho cliccato sulle note");
+            $state.go('app.notes');
+
+        }
+
     }
 
 })();

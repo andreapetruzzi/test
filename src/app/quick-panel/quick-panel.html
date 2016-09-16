@@ -1,5 +1,14 @@
 <md-content>
     <md-tabs md-no-pagination md-swipe-content md-stretch-tabs="always">
+
+      <md-tab ng-repeat="tab in vm.dinamicTabs"
+              label="{{tab.title}}">
+        <div class="today-tab scrollable" ms-scroll>
+          <div ng-include="tab.content"></div>
+        </div>
+      </md-tab>
+
+<!--
         <md-tab>
             <md-tab-label>
                 <span translate="QUICKPANEL.TODAY">TODAY</span>
@@ -31,5 +40,8 @@
                 </md-content>
             </md-tab-body>
         </md-tab>
+-->
+
+
     </md-tabs>
 </md-content>

@@ -7,7 +7,7 @@
         .controller('NavigationController', NavigationController);
 
     /** @ngInject */
-    function NavigationController($scope)
+    function NavigationController($scope, msNavigationService)
     {
         var vm = this;
 
@@ -21,7 +21,22 @@
         // Methods
         vm.toggleMsNavigationFolded = toggleMsNavigationFolded;
 
+        initDynamicNavigationMenu();
+
         //////////
+
+
+        //metodo di inizializzazione dinamica del menu
+        //in modo che posso creare dinamicamente il contenuto del menu di sx dopo la fase di configurazione
+        function initDynamicNavigationMenu()
+        {
+            //aggiungo dinamicamente al menu di sx
+            msNavigationService.saveItem('apps.notes.notes2', {
+                title : 'Notes2 dinamico',
+                state : 'app.notes2'
+            });
+        }
+
 
         /**
          * Toggle folded status
