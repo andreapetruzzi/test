@@ -17,6 +17,9 @@
         //////////cosa scritta in sviluppo e altra cosa scritta sul master
 
         //qui scrivo altra cosa in sviluppo
+
+        //qui ho fatto il fix in produzione
+
     }
 
 })();
