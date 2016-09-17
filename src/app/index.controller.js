@@ -14,7 +14,7 @@
         // Data
         vm.themes = fuseTheming.themes;
 
-        //////////cosa scritta in sviluppo 
+        //////////cosa scritta in sviluppo e altra cosa scritta sul master
 
 
     }
