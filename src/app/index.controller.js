@@ -14,7 +14,8 @@
         // Data
         vm.themes = fuseTheming.themes;
 
-        //////////
+        //////////cosa scritta in sviluppo 
+
 
     }
 
